@@ -4,7 +4,10 @@
   "main": "index.js",
   "scripts": {
     "start": "node --watch app.js",
-    "test":"jest"
+    "test": "jest"
+  },
+  "jest": {
+    "testEnvironment": "node"
   },
   "keywords": [],
   "author": "",
@@ -16,5 +19,9 @@
     "express": "^4.21.1",
     "mysql2": "^3.11.3",
     "sequelize": "^6.37.5"
+  },
+  "devDependencies": {
+    "jest": "^30.2.0",
+    "supertest": "^7.1.4"
   }
 }
