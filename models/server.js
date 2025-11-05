@@ -2,6 +2,9 @@ const express = require('express');
 const cors = require('cors');
 require('dotenv').config();
 
+const swaggerUi = require('swagger-ui-express');
+const swaggerSpec = require('../swagger');
+
 class Server {
     constructor() {
         this.app = express();
@@ -17,6 +20,8 @@ class Server {
     }
 
     routes() {
+        this.app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+
         this.app.use('/api/usuarios', require('../routes/usuarios'));
     }
 
